@@ -50,8 +50,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Next.js", "Typescript"];
-  const rightLists = ["JavaScript", "Redux", "GraphQL"];
+  const leftLists = ["ReactJS", "Next.js", "Typescript", "HTML5"];
+  const rightLists = ["JavaScript", "Redux", "GraphQL", "CSS"];
 
   const [copied, setCopied] = useState(false);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
@@ -152,7 +152,7 @@ export const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="mt-5 relative">
+            <div className="mt-5 relative flex flex-col items-center w-full">
               <div
                 className={`absolute -bottom-5 right-0 ${
                   copied ? "block" : "block"
