@@ -7,15 +7,16 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="projects">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-12 gap-y-8 min-[500px]:gap-y-18 min-[600px]:gap-y-32 md:gap-y-44 lg:gap-y-28 xl:gap-y-18 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map((item) => (
           <div
-            className="h-auto flex items-center justify-center w-[80vw] md:w-[70vw] lg:w-135"
+            className="sm:h-164 h-128 lg:min-h-130 flex items-center justify-center sm:w-142.5 w-[80vw]
+            "
             key={item.id}
           >
             <PinContainer
@@ -24,7 +25,10 @@ const RecentProjects = () => {
               className="w-full"
               containerClassName="w-full"
             >
-              <div className="relative flex items-center justify-center w-full overflow-hidden max-[500px]:h-56 h-72 sm:h-80 md:h-96 lg:h-80 mb-10">
+              <div
+                className="relative flex items-center justify-center sm:w-142.5 w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10
+"
+              >
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -57,7 +61,7 @@ const RecentProjects = () => {
               </p>
 
               <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center">
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
