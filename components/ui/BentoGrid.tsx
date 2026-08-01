@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import animationData from "@/data/confetti.json";
+import Image from "next/image";
 
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 
@@ -80,11 +81,12 @@ export const BentoGridItem = ({
       }}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
+        <div className="relative w-full h-full">
           {img && (
-            <img
+            <Image
               src={img}
               alt={title?.toString() || "Bento grid image"}
+              fill
               className={cn(imgClassName, "object-cover object-center")}
             />
           )}
@@ -95,11 +97,14 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              className="object-cover object-center w-full h-full"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={spareImg}
+                alt={spareImg}
+                fill
+                className="object-cover object-center"
+              />
+            </div>
           )}
         </div>
         {id === 6 && (

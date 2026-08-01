@@ -104,11 +104,14 @@ export const BackgroundGradientAnimation = ({
 
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
-      if (interactiveRef.current) {
-        const rect = interactiveRef.current.getBoundingClientRect();
+      const element = interactiveRef.current;
+      if (!element) return;
+
+      requestAnimationFrame(() => {
+        const rect = element.getBoundingClientRect();
         setTgX(event.clientX - rect.left);
         setTgY(event.clientY - rect.top);
-      }
+      });
     },
     []
   );
