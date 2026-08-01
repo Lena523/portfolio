@@ -4,7 +4,6 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
-import Image from "next/image";
 
 const RecentProjects = () => {
   return (
@@ -34,23 +33,19 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/bg.png"
-                      alt="bgimg"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="relative w-full h-full">
-                  <Image
-                    src={item.img}
-                    alt="cover"
-                    fill
-                    className="z-10 absolute bottom-0 max-w-full max-h-full object-contain"
+                  <img
+                    src="/bg.png"
+                    alt="bgimg"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
+                <img
+                  src={item.img}
+                  alt="cover"
+                  className="z-10 absolute bottom-0 max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
               </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -77,14 +72,12 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <div className="relative w-10 h-10">
-                        <Image
-                          src={icon}
-                          alt="icon5"
-                          fill
-                          className="p-2 object-contain"
-                        />
-                      </div>
+                      <img
+                        src={icon}
+                        alt="icon5"
+                        className="p-2"
+                        loading="lazy"
+                      />
                     </div>
                   ))}
                 </div>
